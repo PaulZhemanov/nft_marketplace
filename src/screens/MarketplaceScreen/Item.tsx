@@ -14,7 +14,7 @@ const Root = styled.div`
 	padding: 16px;
 	box-sizing: border-box;
 	border: 2px solid #eeeeee;
-	border-radius: 12px;
+	border-radius: 8px;
 `;
 
 interface IProps {
@@ -26,7 +26,9 @@ const Item: React.FC<IProps> = ({ item }) => {
 
 	return (
 		<Root>
-			<ItemMeta item={item} />
+			<ItemMeta item={item}/>
+			<SizedBox height={24} />
+
 			<Button onClick={() => setVisible(true)}>Buy NFT</Button>
 			<Dialog item={item} visible={visible} onClose={() => setVisible(false)} title="Buy NFT" />
 		</Root>

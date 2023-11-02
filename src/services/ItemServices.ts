@@ -26,7 +26,7 @@ export const data: Array<TItem> = [
 		name: "Puzzle Staker",
 		description: "Staked PUZZLE 1+ times on PUZZLESWAP",
 		link: "https://bafybeigu24mgtptcmtbmhbprppisqslofc4ogevp3pz6piwnwyd4ktd4qu.ipfs.nftstorage.link/",
-		price: "0.05 ETH",
+		price: "0.01 ETH",
 	},
 	{
 		id: 4,

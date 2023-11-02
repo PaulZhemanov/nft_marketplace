@@ -21,7 +21,6 @@
     margin: 0;
     width: 100%;
     max-width: 400px;
-    /*width: calc(100% - 32px);*/
 }
 
 .rc-dialog-content {
@@ -35,7 +34,7 @@
 
 .rc-dialog-body {
     box-sizing: border-box;
-    padding: 48px 0;
+    padding: 20px;
 }
 
 .rc-dialog-title {

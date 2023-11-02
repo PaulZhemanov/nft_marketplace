@@ -12,15 +12,15 @@ import { TItem } from "@src/services/ItemServices";
 import ItemMeta from "@components/ItemMeta";
 
 const Root = styled.div`
+	//width:266px;
 	display: flex;
 	flex-direction: column;
 	//justify-content: space-between;
-	padding: 30px;
+	padding: 20px;
 	box-sizing: border-box;
 	//border: 2px solid #eeeeee;
-	//border-radius: 12px;
+	//border-radius: 120px;
 	text-align: center;
-	//gap: 16px;
 	& > .title {
 		font-weight: 700;
 		font-size: 24px;
@@ -54,9 +54,15 @@ const Dialog: React.FC<IProps> = ({ item, title, children, ...rest }) => (
 	>
 		{children}
 		<Root>
-			<Text className={"title"}>{title}</Text>
+			<Text  className={"title"}>{title}</Text>
 			<SizedBox height={16} />
-			<ItemMeta item={item} />
+			<ItemMeta item={item}
+					  width='266px'
+					  height= '266px'
+
+			/>
+			<Text className="title">Price {item.price}</Text>
+
 			<Button>Buy for {item.price}</Button>
 		</Root>
 	</RcDialog>

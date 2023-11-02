@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 const Root = styled.div`
   display: flex;
   justify-content: center;
+  
 `
 
 function App() {
