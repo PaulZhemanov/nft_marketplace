@@ -6,10 +6,10 @@ import { IDialogPropTypes } from "rc-dialog/lib/IDialogPropTypes";
 import { ReactComponent as CloseIcon } from "@src/assets/icons/closeBtn.svg";
 import styled from "@emotion/styled";
 import Button from "@components/Button";
-import { ItemView } from "@screens/MarketplaceScreen/ItemView";
 import Text from "@components/Text";
 import SizedBox from "@components/SizedBox";
 import { TItem } from "@src/services/ItemServices";
+import ItemMeta from "@components/ItemMeta";
 
 const Root = styled.div`
 	display: flex;
@@ -29,7 +29,6 @@ const Root = styled.div`
 `;
 
 const CloseButton = styled(Button)`
-	//width: 400px;
 	padding: 0;
 `;
 
@@ -53,11 +52,12 @@ const Dialog: React.FC<IProps> = ({ item, title, children, ...rest }) => (
 		maskAnimation="fade"
 		{...rest}
 	>
-		{/*{children}*/}
+		{children}
 		<Root>
 			<Text className={"title"}>{title}</Text>
 			<SizedBox height={16} />
-			<ItemView src={item.link} />
+			<ItemMeta item={item} />
+			<Button>Buy for {item.price}</Button>
 		</Root>
 	</RcDialog>
 );

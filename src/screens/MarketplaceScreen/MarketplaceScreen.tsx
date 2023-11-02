@@ -11,21 +11,21 @@ import { data } from "@src/services/ItemServices";
 interface IProps {}
 
 const Root = styled.div`
-  display: flex;
-  //flex: 1;
-  justify-content: center;
-  flex-direction: column;
-  align-items: start;
-  box-sizing: border-box;
-  padding: 0 16px;
-  height: 100%;
-  width: 100%;
-  min-height: calc(100vh - 150px);
-  max-width: calc(1160px + 32px);
-  @media (min-width: 1280px) {
-    padding: 0 24px;
+	display: flex;
+	//flex: 1;
+	justify-content: center;
+	flex-direction: column;
+	align-items: start;
+	box-sizing: border-box;
+	padding: 0 16px;
+	height: 100%;
+	width: 100%;
+	min-height: calc(100vh - 150px);
+	max-width: calc(1160px + 32px);
+	@media (min-width: 1280px) {
+		padding: 0 24px;
 
-  }
+	}
 `;
 
 const BadgesGrid = styled.div`

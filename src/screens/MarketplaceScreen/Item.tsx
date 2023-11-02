@@ -3,9 +3,9 @@ import React, {useState} from "react";
 import Button from "@components/Button";
 import SizedBox from "@components/SizedBox";
 import Dialog from "@components/Dialog/Dialog";
-import {ItemView} from "@screens/MarketplaceScreen/ItemView";
 import { data, TItem } from "@src/services/ItemServices";
-
+import Text from "@components/Text";
+import ItemMeta from "@components/ItemMeta";
 
 const Root = styled.div`
 	display: flex;
@@ -26,8 +26,7 @@ const Item: React.FC<IProps> = ({ item }) => {
 
 	return (
 		<Root>
-			<ItemView src={item.link} />
-			<SizedBox height={30} />
+			<ItemMeta item={item} />
 			<Button onClick={() => setVisible(true)}>Buy NFT</Button>
 			<Dialog item={item} visible={visible} onClose={() => setVisible(false)} title="Buy NFT" />
 		</Root>
