@@ -6,9 +6,9 @@ import Header from "@components/Header";
 import Item from "@screens/MarketplaceScreen/Item"
 import Footer from "@components/Footer";
 import {ReactComponent as Telegram} from "@src/assets/icons/telegramOutline.svg";
+import { data } from "@src/services/ItemServices";
 
-interface IProps {
-}
+interface IProps {}
 
 const Root = styled.div`
   display: flex;
@@ -83,34 +83,21 @@ const TelegramButton = styled(Button)`
 `;
 const MarketplaceScreen: React.FC<IProps> = observer(() => {
     return (
-        <Root>
-            <Header/>
-            <Title>Explore the Best Items on Fuel Ecosystem</Title>
-            <ItemsGrid>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-                <Item/>
-            </ItemsGrid>
-            <Footer/>
-            <TelegramButton
-                kind="secondary"
-                size="medium"
-                onClick={() => window.open("https://t.me/meedus_nft", "_blank")}
-            >
-                <Telegram style={{width: 20, height: 20}}/>
-                Join our Telegram
-            </TelegramButton>
-        </Root>
-    );
+					<Root>
+						<Header />
+						<Title>Explore the Best Items on Fuel Ecosystem</Title>
+						<ItemsGrid>
+							{data.map((item) => (
+								<Item item={item} />
+							))}
+						</ItemsGrid>
+						<Footer />
+						<TelegramButton kind="secondary" size="medium" onClick={() => window.open("https://t.me/meedus_nft", "_blank")}>
+							<Telegram style={{ width: 20, height: 20 }} />
+							Join our Telegram
+						</TelegramButton>
+					</Root>
+				);
 });
 
 
