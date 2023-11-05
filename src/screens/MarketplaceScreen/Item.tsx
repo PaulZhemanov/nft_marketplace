@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Button from "@components/Button";
 import SizedBox from "@components/SizedBox";
 import Dialog from "@components/Dialog/Dialog";
@@ -26,7 +26,7 @@ const Item: React.FC<IProps> = ({ item }) => {
 
 	return (
 		<Root>
-			<ItemMeta item={item}/>
+			<ItemMeta item={item} />
 			<SizedBox height={24} />
 
 			<Button onClick={() => setVisible(true)}>Buy NFT</Button>

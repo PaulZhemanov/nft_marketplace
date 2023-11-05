@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "types": [
+      "@fuel-wallet/sdk"
+    ],
     "target": "es5",
     "lib": [
       "dom",
@@ -28,7 +31,7 @@
       "@stores": ["src/stores"],
       "@stores/*": ["src/stores/*"],
       "@screens": ["src/screens"],
-      "@screens/*": ["src/screens/*"],
+      "@screens/*": ["src/screens/*"]
 
 
     }
@@ -37,3 +40,4 @@
     "src"
   ]
 }
+

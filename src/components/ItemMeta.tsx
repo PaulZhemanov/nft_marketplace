@@ -5,8 +5,7 @@ import { TItem } from "@src/services/ItemServices";
 import styled from "@emotion/styled";
 import Button from "@components/Button";
 
-const Root = styled.div`
-`;
+const Root = styled.div``;
 
 const ItemView = styled.img<{ src?: string; width?: string; height?: string }>`
 	border-radius: 8px;

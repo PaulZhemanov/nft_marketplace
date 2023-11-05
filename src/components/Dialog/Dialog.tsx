@@ -21,6 +21,7 @@ const Root = styled.div`
 	//border: 2px solid #eeeeee;
 	//border-radius: 120px;
 	text-align: center;
+
 	& > .title {
 		font-weight: 700;
 		font-size: 24px;
@@ -54,13 +55,9 @@ const Dialog: React.FC<IProps> = ({ item, title, children, ...rest }) => (
 	>
 		{children}
 		<Root>
-			<Text  className={"title"}>{title}</Text>
+			<Text className={"title"}>{title}</Text>
 			<SizedBox height={16} />
-			<ItemMeta item={item}
-					  width='266px'
-					  height= '266px'
-
-			/>
+			<ItemMeta item={item} width="266px" height="266px" />
 			<Text className="title">Price {item.price}</Text>
 
 			<Button>Buy for {item.price}</Button>
