@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
-import React, { HTMLAttributes, PropsWithChildren } from "react";
+import React, { HTMLAttributes } from "react";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Button from "@components/Button";
 import { ReactComponent as Telegram } from "@src/assets/icons/telegramOutline.svg";
 
-interface IProps extends PropsWithChildren, HTMLAttributes<HTMLDivElement> {
-	header?: JSX.Element;
-	footer?: JSX.Element | null;
+interface IProps extends HTMLAttributes<HTMLDivElement> {
+	header?: React.ReactNode;
+	footer?: React.ReactNode;
 }
 
 const Root = styled.div`

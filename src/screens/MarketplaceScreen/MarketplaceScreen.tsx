@@ -1,11 +1,7 @@
 import styled from "@emotion/styled";
-import Button from "@components/Button";
 import { observer } from "mobx-react-lite";
 import React from "react";
-import Header from "@components/Header";
 import Item from "@screens/MarketplaceScreen/Item";
-import Footer from "@components/Footer";
-import { ReactComponent as Telegram } from "@src/assets/icons/telegramOutline.svg";
 import { data } from "@src/services/ItemServices";
 import Layout from "@components/Layout";
 import Input from "@components/Input";

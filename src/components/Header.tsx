@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import logo from "@src/assets/images/bigLogo.svg";
-import Input from "@components/Input";
 import Button from "@components/Button";
 import { useStores } from "@stores/useStores";
 import { observer } from "mobx-react-lite";
@@ -31,12 +30,6 @@ const Logo = styled.img`
 	&:hover {
 		transform: scale(1.02);
 	}
-`;
-
-const Row = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 20px;
 `;
 
 interface IProps {}

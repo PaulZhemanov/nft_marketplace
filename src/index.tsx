@@ -6,7 +6,7 @@ import RootStore from "@stores/RootStore";
 import { autorun } from "mobx";
 import { loadState, saveState } from "@stores/localStorage";
 import { storesContext } from "@stores/useStores";
-import { BrowserRouter, Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 const initState = loadState();
 

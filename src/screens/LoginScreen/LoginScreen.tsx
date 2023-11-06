@@ -10,7 +10,6 @@ import pic from "@src/assets/images/connectWalletPic.png";
 import Layout from "@components/Layout";
 import LoginScreenHeader from "@screens/LoginScreen/LoginScreenHeader";
 import { Anchor } from "@components/Anchor";
-import Footer from "@components/Footer";
 
 interface IProps {}
 
