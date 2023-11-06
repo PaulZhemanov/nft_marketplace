@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 import logo from "@src/assets/images/bigLogo.svg";
 import Input from "@components/Input";
 import Button from "@components/Button";
-import { useFuel } from "@src/hooks/useFuel";
-import { useIsConnected } from "@src/hooks/useIsConnected";
-import { Fuel } from "@fuel-wallet/sdk";
+
+import { useStores } from "@stores/useStores";
+import { observer } from "mobx-react-lite";
 
 const Root = styled.div`
 	display: flex;
@@ -43,46 +43,20 @@ const Row = styled.div`
 interface IProps {}
 
 const Header: React.FC<IProps> = () => {
-	const [isConnected] = useIsConnected();
-	// const [fuel, error, fuelLoading] = useFuel();
-	const [fuel, notDetected] = useFuel();
+	const { accountStore } = useStores();
+
 	return (
 		<Root>
 			<a href="https://meedus.space">
 				<Logo src={logo} />
 			</a>
 			<Input icon="search" style={{ height: 40, maxWidth: 320 }} placeholder="Search by name..." />
-			{isConnected ? (
-				<Row>
-					<Button
-						// onClick={() => fuel.connect()}
-						// disabled={fuel == null || fuelLoading}
-						style={{ maxWidth: 170 }}
-						size="medium"
-					>
-						View profile
-					</Button>
-					<Button
-						onClick={() => fuel.disconnect()}
-						// disabled={fuel == null || fuelLoading}
-						style={{ maxWidth: 170 }}
-						size="medium"
-					>
-						Disconnect
-					</Button>
-				</Row>
-			) : (
-				<Button
-					onClick={() => fuel.connect()}
-					// disabled={fuel == null || fuelLoading}
-					style={{ maxWidth: 170 }}
-					size="medium"
-				>
-					Connect wallet
-				</Button>
-			)}
+			<Button onClick={() => accountStore.setLoginModalOpened(true)} style={{ maxWidth: 170 }} size="medium">
+				Connect wallet
+			</Button>
+			)
 		</Root>
 	);
 };
 
-export default Header;
+export default observer(Header);
