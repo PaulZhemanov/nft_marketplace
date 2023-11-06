@@ -7,12 +7,13 @@ import Item from "@screens/MarketplaceScreen/Item";
 import Footer from "@components/Footer";
 import { ReactComponent as Telegram } from "@src/assets/icons/telegramOutline.svg";
 import { data } from "@src/services/ItemServices";
+import Layout from "@components/Layout";
 
 interface IProps {}
 
 const Root = styled.div`
 	display: flex;
-	//flex: 1;
+	flex: 1;
 	justify-content: center;
 	flex-direction: column;
 	align-items: start;
@@ -24,19 +25,6 @@ const Root = styled.div`
 	max-width: calc(1160px + 32px);
 	@media (min-width: 1280px) {
 		padding: 0 24px;
-	}
-`;
-
-const BadgesGrid = styled.div`
-	width: 100%;
-	display: inline-grid;
-	gap: 24px;
-	grid-template-columns: 1fr;
-	@media (min-width: 768px) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media (min-width: 1024px) {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 `;
 
@@ -70,32 +58,18 @@ const ItemsGrid = styled.div`
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 `;
-const TelegramButton = styled(Button)`
-	position: fixed;
-	bottom: 72px;
-	right: 40px;
-	max-width: fit-content;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-`;
 const MarketplaceScreen: React.FC<IProps> = observer(() => {
 	return (
-		<Root>
-			<Header />
-			<Title>Explore the Best Items on Fuel Ecosystem</Title>
-			<ItemsGrid>
-				{data.map((item) => (
-					<Item item={item} />
-				))}
-			</ItemsGrid>
-			<Footer />
-			<TelegramButton kind="secondary" size="medium" onClick={() => window.open("https://t.me/meedus_nft", "_blank")}>
-				<Telegram style={{ width: 20, height: 20 }} />
-				Join our Telegram
-			</TelegramButton>
-		</Root>
+		<Layout>
+			<Root>
+				<Title>Explore the Best Items on Fuel Ecosystem</Title>
+				<ItemsGrid>
+					{data.map((item) => (
+						<Item item={item} />
+					))}
+				</ItemsGrid>
+			</Root>
+		</Layout>
 	);
 });
 

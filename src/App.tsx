@@ -1,13 +1,13 @@
 import React from "react";
 import MarketplaceScreen from "@screens/MarketplaceScreen/MarketplaceScreen";
 import styled from "@emotion/styled";
-import LoginScreen from "@screens/LoginScreen";
+import LoginScreen from "@screens/LoginScreen/LoginScreen";
 import { ROUTES } from "@src/constants";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const Root = styled.div`
-	//display: flex;
-	//justify-content: center;
+	display: flex;
+	justify-content: center;
 `;
 
 interface IProps {}
