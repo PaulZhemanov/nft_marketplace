@@ -10,6 +10,7 @@ import pic from "@src/assets/images/connectWalletPic.png";
 import Layout from "@components/Layout";
 import LoginScreenHeader from "@screens/LoginScreen/LoginScreenHeader";
 import { Anchor } from "@components/Anchor";
+import Footer from "@components/Footer";
 
 interface IProps {}
 
@@ -50,44 +51,15 @@ const layoutStyle: React.CSSProperties = {
 	left: 0,
 	bottom: 0,
 	right: 0,
-	zIndex: 10,
+	// zIndex: 10,
 	background: "#fff",
 };
-const Logo = styled.img`
-	height: 48px;
-	transition: transform 0.3s ease;
 
-	&:hover {
-		transform: scale(1.02);
-	}
-`;
-const CloseButton = styled(Button)`
-	width: 40px;
-	padding: 0;
-`;
-const Header = styled.div`
-	display: flex;
-	flex-direction: row;
-	box-sizing: border-box;
-	padding: 0 16px;
-	height: 80px;
-	z-index: 2;
-	align-items: center;
-	max-width: calc(1160px + 32px);
-	width: 100%;
-	justify-content: space-between;
-	color: white;
-	@media (min-width: 1280px) {
-		padding: 16px 24px;
-		border-bottom: 1px solid transparent;
-		background: transparent;
-	}
-`;
 const LoginScreen: React.FC<IProps> = () => {
 	const { accountStore } = useStores();
 	if (!accountStore.loginModalOpened) return null;
 	return (
-		<Layout style={layoutStyle} header={<LoginScreenHeader />}>
+		<Layout style={layoutStyle} header={<LoginScreenHeader />} footer={<></>}>
 			<Row alignItems="center">
 				<Pic />
 				<Root>

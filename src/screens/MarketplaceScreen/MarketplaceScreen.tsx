@@ -8,6 +8,9 @@ import Footer from "@components/Footer";
 import { ReactComponent as Telegram } from "@src/assets/icons/telegramOutline.svg";
 import { data } from "@src/services/ItemServices";
 import Layout from "@components/Layout";
+import Input from "@components/Input";
+import SizedBox from "@components/SizedBox";
+import Tabs from "@components/Tabs";
 
 interface IProps {}
 
@@ -16,7 +19,7 @@ const Root = styled.div`
 	flex: 1;
 	justify-content: center;
 	flex-direction: column;
-	align-items: start;
+	align-items: center;
 	box-sizing: border-box;
 	padding: 0 16px;
 	height: 100%;
@@ -32,12 +35,11 @@ const Title = styled.div`
 	font-weight: 700;
 	font-size: 40px;
 	line-height: 48px;
-	text-align: start;
+	text-align: center;
 	letter-spacing: -0.01em;
 	color: #000000;
-	max-width: 690px;
+	max-width: 900px;
 	margin-bottom: 40px;
-
 	@media (min-width: 768px) {
 		font-size: 56px;
 		line-height: 64px;
@@ -62,7 +64,21 @@ const MarketplaceScreen: React.FC<IProps> = observer(() => {
 	return (
 		<Layout>
 			<Root>
-				<Title>Explore the Best Items on Fuel Ecosystem</Title>
+				<SizedBox height={30} />
+				<Title>Explore Items on Fuel Ecosystem</Title>
+				<Input
+					// onChange={(e) => vm.setSearch(e.target.value)}
+					icon="search"
+					style={{ height: 48, maxWidth: 320 }}
+					placeholder="Search in Meedus…"
+				/>
+				<SizedBox height={36} />
+				<Tabs
+					// activeTab={vm.tab}
+					// setActive={vm.setTab}
+					tabs={[{ name: "All" }, { name: "Unlocked" }, { name: "Locked" }]}
+				/>
+				<SizedBox height={40} />
 				<ItemsGrid>
 					{data.map((item) => (
 						<Item item={item} />

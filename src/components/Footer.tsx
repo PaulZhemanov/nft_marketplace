@@ -24,7 +24,7 @@ const Root = styled.div`
 const Footer: React.FC<IProps> = () => {
 	return (
 		<Root>
-			<Text fitContent>MEEDUS, 2022</Text>
+			<Text fitContent>MEEDUS, 2023</Text>
 			<Row mainAxisSize="fit-content">
 				<SizedBox width={20} />
 				<Telegram

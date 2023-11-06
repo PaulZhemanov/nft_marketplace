@@ -49,11 +49,9 @@ const Header: React.FC<IProps> = () => {
 			<a href="https://meedus.space">
 				<Logo src={logo} />
 			</a>
-			<Input icon="search" style={{ height: 40, maxWidth: 320 }} placeholder="Search by name..." />
 			<Button onClick={() => accountStore.setLoginModalOpened(true)} style={{ maxWidth: 170 }} size="medium">
 				Connect wallet
 			</Button>
-			)
 		</Root>
 	);
 };

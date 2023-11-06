@@ -4,10 +4,10 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Button from "@components/Button";
 import { ReactComponent as Telegram } from "@src/assets/icons/telegramOutline.svg";
-import SizedBox from "@components/SizedBox";
 
 interface IProps extends PropsWithChildren, HTMLAttributes<HTMLDivElement> {
 	header?: JSX.Element;
+	footer?: JSX.Element | null;
 }
 
 const Root = styled.div`
@@ -36,17 +36,17 @@ const TelegramButton = styled(Button)`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 8px;
 `;
 
-const Layout: React.FC<IProps> = ({ children, header, ...rest }) => {
+const Layout: React.FC<IProps> = ({ children, header, footer, ...rest }) => {
 	return (
 		<Root {...rest}>
 			{header ?? <Header />}
 			<Content>{children}</Content>
-			<Footer />
+			{footer ?? <Footer />}
 			<TelegramButton kind="secondary" size="medium" onClick={() => window.open("https://t.me/meedus_nft", "_blank")}>
 				<Telegram style={{ width: 20, height: 20 }} />
-				<SizedBox width={8} />
 				Join our Telegram
 			</TelegramButton>
 		</Root>
