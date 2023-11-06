@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import logo from "@src/assets/images/bigLogo.svg";
-import Input from "@components/Input";
+import { ReactComponent as CloseIcon } from "@src/assets/icons/closeBtn.svg";
 import Button from "@components/Button";
 import { useStores } from "@stores/useStores";
-import { observer } from "mobx-react-lite";
+
+interface IProps {}
 
 const Root = styled.div`
 	display: flex;
 	box-sizing: border-box;
 	padding: 0 16px;
 	height: 80px;
-	//z-index: 2;
+	z-index: 2;
 	align-items: center;
 	max-width: calc(1160px + 32px);
 	width: 100%;
@@ -23,39 +24,25 @@ const Root = styled.div`
 		background: transparent;
 	}
 `;
-
 const Logo = styled.img`
 	height: 48px;
-	transition: transform 0.3s ease;
-
-	&:hover {
-		transform: scale(1.02);
-	}
+`;
+const CloseButton = styled(Button)`
+	width: 40px;
+	padding: 0;
 `;
 
-const Row = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 20px;
-`;
-
-interface IProps {}
-
-const Header: React.FC<IProps> = () => {
+const LoginScreenHeader: React.FC<IProps> = () => {
 	const { accountStore } = useStores();
-
 	return (
 		<Root>
-			<a href="https://meedus.space">
+			<a href="/">
 				<Logo src={logo} />
 			</a>
-			<Input icon="search" style={{ height: 40, maxWidth: 320 }} placeholder="Search by name..." />
-			<Button onClick={() => accountStore.setLoginModalOpened(true)} style={{ maxWidth: 170 }} size="medium">
-				Connect wallet
-			</Button>
-			)
+			<CloseButton size="medium" kind="secondary" onClick={() => accountStore.setLoginModalOpened(false)}>
+				<CloseIcon />
+			</CloseButton>
 		</Root>
 	);
 };
-
-export default observer(Header);
+export default LoginScreenHeader;
