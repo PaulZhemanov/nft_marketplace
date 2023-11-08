@@ -1,3 +1,4 @@
+
 .rc-dialog-mask {
     background: rgba(0, 0, 0, 0.5);
 }
@@ -16,23 +17,25 @@
     }
 }
 
+
 .rc-dialog {
     margin: 0;
     width: 100%;
     max-width: 400px;
+    /*width: calc(100% - 32px);*/
 }
 
 .rc-dialog-content {
-    background: #ffffff;
+    background: #FFFFFF;
     border-radius: 8px;
-    overflow: hidden;
     min-height: 286px;
     padding: 0;
 }
 
+
 .rc-dialog-body {
     box-sizing: border-box;
-    padding: 20px;
+    /*padding: 48px 0;*/
 }
 
 .rc-dialog-title {
@@ -41,8 +44,10 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: #FFFFFF;
+
 }
+
 
 .rc-dialog-close {
     opacity: 1;
