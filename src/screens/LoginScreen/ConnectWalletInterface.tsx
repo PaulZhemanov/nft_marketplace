@@ -14,12 +14,12 @@ const ConnectWalletInterface: React.FC<IProps> = observer(() => {
 		{
 			name: "Fuel Wallet",
 			type: LOGIN_TYPE.FUEL_WALLET,
-			// active: accountStore.listConnectors.includes(LOGIN_TYPE.FUEL_WALLET),
+			active: accountStore.listConnectors.includes(LOGIN_TYPE.FUEL_WALLET),
 		},
 		{
 			name: "Fuelet",
 			type: LOGIN_TYPE.FUELET,
-			// active: accountStore.listConnectors.includes(LOGIN_TYPE.FUELET),
+			active: accountStore.listConnectors.includes(LOGIN_TYPE.FUELET),
 		},
 
 		{ name: "Metamask", active: false },
@@ -36,8 +36,7 @@ const ConnectWalletInterface: React.FC<IProps> = observer(() => {
 					key={name}
 					style={{ marginBottom: 16, maxWidth: 360 }}
 					kind="secondary"
-					// onClick={() => active && type && accountStore.login(type)}
-					onClick={() => active && type}
+					onClick={() => active && type && accountStore.login(type)}
 					disabled={!active}
 				>
 					{name}
