@@ -1,6 +1,13 @@
 import RootStore from "@stores/RootStore";
 import { makeAutoObservable } from "mobx";
 
+export enum LOGIN_TYPE {
+	FUEL_WALLET = "Fuel Wallet",
+	FUEL_DEV = "Fuel Wallet Development",
+	FUELET = "Fuelet Wallet",
+	GENERATE_SEED = "Generate seed",
+}
+
 class AccountStore {
 	public readonly rootStore: RootStore;
 
