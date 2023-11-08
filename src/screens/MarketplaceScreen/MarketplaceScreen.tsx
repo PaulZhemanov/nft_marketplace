@@ -7,6 +7,7 @@ import Layout from "@components/Layout";
 import Input from "@components/Input";
 import SizedBox from "@components/SizedBox";
 import Tabs from "@components/Tabs";
+import { Row } from "@components/Flex";
 
 interface IProps {}
 
@@ -62,12 +63,15 @@ const MarketplaceScreen: React.FC<IProps> = observer(() => {
 			<Root>
 				<SizedBox height={30} />
 				<Title>Explore Items on Fuel Ecosystem</Title>
-				<Input
-					// onChange={(e) => vm.setSearch(e.target.value)}
-					icon="search"
-					style={{ height: 48, maxWidth: 320 }}
-					placeholder="Search in Meedus…"
-				/>
+				<Row justifyContent="flex-end">
+					<Input
+						// onChange={(e) => vm.setSearch(e.target.value)}
+						icon="search"
+						style={{ height: 48, maxWidth: 320 }}
+						placeholder="Search in Meedus…"
+					/>
+				</Row>
+
 				<SizedBox height={36} />
 				<Tabs
 					// activeTab={vm.tab}

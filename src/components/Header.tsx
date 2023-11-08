@@ -42,7 +42,7 @@ const Header: React.FC<IProps> = () => {
 			<a href="https://meedus.space">
 				<Logo src={logo} />
 			</a>
-			<Button onClick={() => accountStore.setLoginModalOpened(true)} style={{ maxWidth: 170 }} size="medium">
+			<Button onClick={() => accountStore.setLoginModalOpened(true)} style={{ maxWidth: 170 }} size="medium" fitContent>
 				Connect wallet
 			</Button>
 		</Root>

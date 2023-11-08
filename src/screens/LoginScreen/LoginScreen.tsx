@@ -4,12 +4,12 @@ import SizedBox from "@components/SizedBox";
 import { useStores } from "@stores/useStores";
 import Text from "@components/Text";
 import styled from "@emotion/styled";
-import { Column, Row } from "@components/Flex";
-import Button from "@components/Button";
+import { Row } from "@components/Flex";
 import pic from "@src/assets/images/connectWalletPic.png";
 import Layout from "@components/Layout";
 import LoginScreenHeader from "@screens/LoginScreen/LoginScreenHeader";
 import { Anchor } from "@components/Anchor";
+import ConnectWalletInterface from "@screens/LoginScreen/ConnectWalletInterface";
 
 interface IProps {}
 
@@ -62,33 +62,7 @@ const LoginScreen: React.FC<IProps> = () => {
 			<Row alignItems="center">
 				<Pic />
 				<Root>
-					<Column justifyContent="center" alignItems="center" crossAxisSize="max" style={{ maxWidth: 360 }}>
-						<Text weight={700} size="large" textAlign="center">
-							Connect wallet
-						</Text>
-						<SizedBox height={40} />
-						<Button
-							kind="secondary"
-							// onClick={handleLogin(LOGIN_TYPE.SIGNER_EMAIL)}
-						>
-							Metamask
-						</Button>
-						<SizedBox height={16} />
-						<Button
-							kind="secondary"
-							// onClick={handleLogin(LOGIN_TYPE.SIGNER_SEED)}
-						>
-							Fuel Wallet
-						</Button>
-						<SizedBox height={16} />
-						<Button
-							kind="secondary"
-							// onClick={!isKeeperDisabled ? handleLogin(LOGIN_TYPE.KEEPER) : undefined}
-						>
-							Fuelet
-						</Button>
-						<SizedBox height={40} />
-					</Column>
+					<ConnectWalletInterface />
 					<SizedBox height={8} />
 					<Text weight={500} size="medium" textAlign="center">
 						<span> New to Fuel blockchain?</span> <br />
