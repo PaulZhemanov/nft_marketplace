@@ -81,7 +81,7 @@ const MarketplaceScreen: React.FC<IProps> = observer(() => {
 				<SizedBox height={40} />
 				<ItemsGrid>
 					{data.map((item) => (
-						<Item item={item} />
+						<Item key={item.id} item={item} />
 					))}
 				</ItemsGrid>
 			</Root>
