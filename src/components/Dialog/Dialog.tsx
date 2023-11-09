@@ -41,9 +41,7 @@ const Dialog: React.FC<IProps> = ({ item, title, children, ...rest }) => (
 				<CloseButton size="medium" kind="secondary">
 					<CloseIcon />
 				</CloseButton>
-			) : (
-				<></>
-			)
+			) : null
 		}
 		animation="zoom"
 		maskAnimation="fade"
