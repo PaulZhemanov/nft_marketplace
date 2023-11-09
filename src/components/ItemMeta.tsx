@@ -1,6 +1,5 @@
 import React from "react";
 import Text from "@components/Text";
-import SizedBox from "@components/SizedBox";
 import { TItem } from "@src/services/ItemServices";
 import styled from "@emotion/styled";
 
