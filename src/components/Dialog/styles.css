@@ -10,8 +10,9 @@
 
     display: flex;
 }
-@media (min-width: 400px){
-    .rc-dialog-wrap  {
+
+@media (min-width: 400px) {
+    .rc-dialog-wrap {
         justify-content: center;
     }
 }
@@ -27,7 +28,6 @@
 .rc-dialog-content {
     background: #FFFFFF;
     border-radius: 8px;
-    /*overflow: hidden;*/
     min-height: 286px;
     padding: 0;
 }
@@ -35,7 +35,7 @@
 
 .rc-dialog-body {
     box-sizing: border-box;
-    padding: 48px 0;
+    /*padding: 48px 0;*/
 }
 
 .rc-dialog-title {
@@ -58,7 +58,7 @@
     padding: 0;
 }
 
-@media (min-width: 400px){
+@media (min-width: 400px) {
     .rc-dialog-close {
         right: 0;
     }
