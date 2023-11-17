@@ -8,11 +8,6 @@ source = "git+https://github.com/FuelLabs/sway-standards?default-branch#4d7d32db
 dependencies = ["std"]
 
 [[package]]
-name = "src_3"
-source = "git+https://github.com/FuelLabs/sway-standards?default-branch#4d7d32dbbb63866242626f96bca0fbf289daf4dd"
-dependencies = ["std"]
-
-[[package]]
 name = "src_7"
 source = "git+https://github.com/FuelLabs/sway-standards?tag=v0.2.0#29cb3a4ad318d847b17936c245b525c1bee3382d"
 dependencies = ["std"]
@@ -35,7 +30,6 @@ name = "token"
 source = "member"
 dependencies = [
     "src_20",
-    "src_3",
     "std",
     "token git+https://github.com/FuelLabs/sway-libs?default-branch#a58566009a364768640826fd78f0b84fe29b92cf",
 ]

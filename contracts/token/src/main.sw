@@ -7,9 +7,8 @@ use token::base::{
     _symbol,
     _decimals
 };
-use token::mint::{_mint, _burn};
+
 use src_20::SRC20;
-use src_3::SRC3;
 use std::{hash::{Hash, sha256}, string::String, storage::storage_string::*};
 
 storage {
@@ -18,6 +17,30 @@ storage {
     name: StorageMap<AssetId, StorageString> = StorageMap {},
     symbol: StorageMap<AssetId, StorageString> = StorageMap {},
     decimals: StorageMap<AssetId, u8> = StorageMap {},
+}
+
+abi Token {
+    #[storage(read)]
+    fn total_assets() -> u64;
+    
+    #[storage(read)]
+    fn total_supply(asset: AssetId) -> Option<u64>;
+    
+    #[storage(read)]
+    fn name(asset: AssetId) -> Option<String>;
+    
+    #[storage(read)]
+    fn symbol(asset: AssetId) -> Option<String>;
+    
+    #[storage(read)]
+    fn decimals(asset: AssetId) -> Option<u8>;
+}
+
+configurable {
+    TOTAL_SUPPLY: u64 = 1,
+    DECIMALS: u8 = 0u8,
+    NAME: str[7] = __to_str_array("MyToken"),
+    SYMBOL: str[5] = __to_str_array("MYTKN"),
 }
 
 impl SRC20 for Contract {
@@ -47,14 +70,3 @@ impl SRC20 for Contract {
     }
 }
 
-impl SRC3 for Contract {
-    #[storage(read, write)]
-    fn mint(recipient: Identity, sub_id: SubId, amount: u64) {
-        let _asset_id = _mint(storage.total_assets, storage.total_supply, recipient, sub_id, amount);
-    }
-
-    #[storage(read, write)]
-    fn burn(sub_id: SubId, amount: u64) {
-        _burn(storage.total_supply, sub_id, amount);
-    }
-}
