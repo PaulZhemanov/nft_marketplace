@@ -5,4 +5,7 @@ license = "Apache-2.0"
 name = "nft_contract"
 
 [dependencies]
-nft = { git = "https://github.com/FuelLabs/sway-libs", tag = "v0.12.0" }
+src_7 = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.1.2" }
+src_20 = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.1.2" }
+src_3 = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.1.2" }
+token = { git = "https://github.com/FuelLabs/sway-libs", tag = "v0.15.0" }
